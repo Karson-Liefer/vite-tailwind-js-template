@@ -20,29 +20,28 @@
 
 <main>
   <h1 id="greeting">Hello, console habits</h1>
-  
   <button id="change-greeting" type="button">Add 1 click</button>
   <button id="reset-btn" type="button">Reset</button>
-  
   <p id="count">Clicks: 0</p>
 </main>
 
 <script>
-const greeting = document.getElementById('greeting');
-const btn = document.getElementById('change-greeting');
-const count = document.getElementById('count');
+
+const countDisplay = document.getElementById('count');
+const addBtn = document.getElementById('change-greeting');
+const resetBtn = document.getElementById('reset-btn');
+
+let currentClicks = 0; 
 
 
-const messageOne = "Hello, console habits";
-const messageTwo = "You clicked the button!";
+addBtn.addEventListener('click', () => {
+  currentClicks++; 
+  countDisplay.textContent = `Clicks: ${currentClicks}`;
+});
 
 
-btn.addEventListener('click', () => {
- 
-  if (greeting.textContent === messageOne) {
-    greeting.textContent = messageTwo;
-  } else {
-    greeting.textContent = messageOne;
-  }
+resetBtn.addEventListener('click', () => {
+  currentClicks = 0; 
+  countDisplay.textContent = `Clicks: ${currentClicks}`;
 });
 </script>
