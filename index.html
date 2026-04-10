@@ -23,3 +23,23 @@
   <button id="change-greeting" type="button">Add 1 click</button>
   <p id="count">Clicks: 0</p>
 </main>
+
+<script>
+const greeting = document.getElementById('greeting');
+const btn = document.getElementById('change-greeting');
+const count = document.getElementById('count');
+
+// 2. Set the two messages
+const messageOne = "Hello, console habits";
+const messageTwo = "You clicked the button!";
+
+// 3. Listen for the click
+btn.addEventListener('click', () => {
+  // If the current text is message one, change to message two. Otherwise, go back to one.
+  if (greeting.textContent === messageOne) {
+    greeting.textContent = messageTwo;
+  } else {
+    greeting.textContent = messageOne;
+  }
+});
+</script>
